@@ -1,38 +1,155 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" role="img" aria-label="Capa de modelo de jogo">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#0b1120" />
-      <stop offset="1" stop-color="#1e3a8a" />
+    
+    <linearGradient id="ondaAzulProfundo" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0369a1" />
+      <stop offset="45%" stop-color="#0284c7" />
+      <stop offset="85%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#bae6fd" stop-opacity="0.3" />
     </linearGradient>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.07" />
-    </pattern>
+
+    <linearGradient id="ondaTransicao" x1="15%" y1="80%" x2="85%" y2="20%">
+      <stop offset="0%" stop-color="#0284c7" />
+      <stop offset="38%" stop-color="#4f46e5" />
+      <stop offset="65%" stop-color="#a21caf" />
+      <stop offset="88%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#fef08a" />
+    </linearGradient>
+
+    <linearGradient id="chamaDourada" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ea580c" />
+      <stop offset="45%" stop-color="#f59e0b" />
+      <stop offset="80%" stop-color="#facc15" />
+      <stop offset="100%" stop-color="#fef9c3" />
+    </linearGradient>
+
+    <linearGradient id="tecidoAzul" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#7dd3fc" />
+    </linearGradient>
+
+    
+    <filter id="haloTexto" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.2" flood-color="#ffffff" flood-opacity="1" />
+      <feDropShadow dx="0" dy="0" stdDeviation="1" flood-color="#ffffff" flood-opacity="1" />
+    </filter>
   </defs>
 
-  <rect width="800" height="450" fill="url(#bg)" />
-  <rect width="800" height="450" fill="url(#grid)" />
-  <circle cx="690" cy="60" r="150" fill="#3b82f6" opacity="0.2" />
+  
+  <rect width="800" height="450" fill="#ffffff" />
 
-  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif">
-    <text x="56" y="72" fill="#93c5fd" font-size="15" font-weight="800" letter-spacing="4">JOGOS VR</text>
+  
+  <g opacity="0.55">
+    <path d="M 110,275 C 90,210 145,145 210,165 C 260,180 285,245 360,240 C 445,235 510,160 585,110 C 645,70 705,115 680,175 C 655,235 570,280 480,310 C 370,345 220,375 135,335 Z" fill="url(#ondaTransicao)" />
+    <ellipse cx="595" cy="145" rx="75" ry="58" fill="url(#chamaDourada)" opacity="0.6" />
+    <ellipse cx="185" cy="285" rx="95" ry="62" fill="url(#ondaAzulProfundo)" opacity="0.6" />
+  </g>
 
-    <g transform="translate(520 130)">
-      <circle cx="90" cy="90" r="86" fill="none" stroke="#334155" stroke-width="14" />
-      <circle cx="90" cy="90" r="56" fill="none" stroke="#f59e0b" stroke-width="14" />
-      <circle cx="90" cy="90" r="26" fill="#3b82f6" />
-      <circle cx="90" cy="90" r="8" fill="#ffffff" />
+  
+  <path d="M 118,348 
+           C 165,372 255,375 348,336 
+           C 425,302 485,305 555,275 
+           C 625,245 675,190 658,132 
+           C 645,92 595,78 558,108 
+           C 588,105 618,128 608,162 
+           C 595,202 525,222 448,248 
+           C 365,275 275,288 212,252 
+           C 172,228 168,182 202,155 
+           C 152,162 122,212 136,268 
+           C 108,288 95,325 118,348 Z" fill="url(#ondaTransicao)" />
+
+  
+  <g fill="url(#chamaDourada)">
+    <path d="M 528,135 C 542,88 588,58 625,74 C 592,76 565,98 552,132 Z" />
+    <path d="M 548,125 C 575,78 632,64 662,92 C 625,86 592,106 572,138 Z" />
+    <path d="M 572,148 C 612,102 668,98 692,132 C 655,122 618,136 592,165 Z" />
+    <path d="M 592,175 C 638,142 688,148 704,182 C 668,168 632,176 605,198 Z" />
+    <path d="M 598,202 C 642,182 682,195 692,224 C 662,208 628,210 602,222 Z" />
+    <path d="M 522,158 C 530,118 558,92 585,95 C 562,104 545,128 540,158 Z" opacity="0.85" />
+  </g>
+
+  
+  <g fill="none" stroke="#b45309" stroke-width="1.1" opacity="0.75">
+    <path d="M 538,132 C 555,92 595,68 632,76" />
+    <path d="M 556,138 C 588,95 642,84 674,106" />
+    <path d="M 578,162 C 622,122 672,122 696,152" />
+    <path d="M 595,188 C 642,162 685,172 698,202" />
+    <path d="M 545,152 C 572,122 608,118 635,134" />
+  </g>
+
+  
+  <g fill="url(#ondaAzulProfundo)">
+    <path d="M 142,232 C 98,215 88,162 128,136 C 108,165 118,202 156,216 Z" />
+    <path d="M 134,268 C 86,272 72,312 104,342 C 92,314 108,288 148,284 Z" />
+    <path d="M 152,306 C 104,322 96,358 134,378 C 118,354 128,332 168,322 Z" />
+    <path d="M 184,336 C 142,362 146,392 188,396 C 168,380 172,358 206,346 Z" />
+    <path d="M 225,352 C 285,382 378,374 442,334 C 372,360 292,364 225,352 Z" />
+  </g>
+
+  
+  <g>
+    
+    <path d="M 212,112 C 185,72 135,64 106,88 C 122,92 138,86 156,92 C 175,98 192,115 210,122 Z" fill="url(#tecidoAzul)" opacity="0.85" />
+    <path d="M 212,112 C 185,72 135,64 106,88 C 122,92 138,86 156,92 C 175,98 192,115 210,122 Z" fill="none" stroke="#1e3a8a" stroke-width="1.2" />
+
+    
+    <path d="M 232,126 C 262,108 298,112 324,132 C 296,126 266,126 236,138 Z" fill="url(#tecidoAzul)" opacity="0.8" />
+    <path d="M 232,126 C 262,108 298,112 324,132" fill="none" stroke="#1e3a8a" stroke-width="1.2" />
+
+    
+    <g fill="none" stroke="#0f172a" stroke-width="1.2" opacity="0.85">
+      <path d="M 218,108 C 198,116 184,138 176,162" />
+      <path d="M 222,110 C 204,124 192,148 188,175" />
+      <path d="M 228,112 C 216,132 210,156 208,182" />
+      <path d="M 215,112 C 192,122 174,142 162,160" />
     </g>
 
-    <text x="56" y="280" fill="#ffffff" font-size="54" font-weight="900" letter-spacing="-1.5">Seu jogo aqui</text>
-    <text x="58" y="320" fill="#bfdbfe" font-size="19" font-weight="600">Copie esta pasta, troque o conteúdo e entregue.</text>
+    
+    <ellipse cx="223" cy="113" rx="6.5" ry="8" fill="#ffffff" stroke="#1e3a8a" stroke-width="1.3" />
+    
+    <line x1="221" y1="112" x2="224" y2="112" stroke="#0f172a" stroke-width="1.2" />
+    <line x1="226" y1="112" x2="228" y2="112" stroke="#0f172a" stroke-width="1.2" />
 
-    <g transform="translate(58 352)">
-      <rect width="128" height="34" rx="17" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.2" />
-      <text x="64" y="22" fill="#e2e8f0" font-size="12" font-weight="700" text-anchor="middle">pasta-modelo</text>
+    
+    <path d="M 228,125 C 248,122 272,126 292,135" fill="none" stroke="#1e3a8a" stroke-width="1.8" />
+    <path d="M 230,126 C 248,142 268,148 286,142 C 268,136 250,132 232,125 Z" fill="url(#tecidoAzul)" opacity="0.75" />
+
+    
+    <path d="M 216,123 L 231,123 L 242,188 L 204,195 Z" fill="url(#tecidoAzul)" />
+    
+    <g fill="none" stroke="#0f172a" stroke-width="1.1" opacity="0.8">
+      <path d="M 216,123 L 204,195" />
+      <path d="M 231,123 L 242,188" />
+      <path d="M 221,128 C 218,152 215,175 212,198" />
+      <path d="M 226,128 C 228,152 231,175 234,196" />
+      <path d="M 208,162 C 220,166 232,165 240,160" />
     </g>
-    <g transform="translate(198 352)">
-      <rect width="150" height="34" rx="17" fill="#ffffff" fill-opacity="0.1" stroke="#ffffff" stroke-opacity="0.2" />
-      <text x="75" y="22" fill="#e2e8f0" font-size="12" font-weight="700" text-anchor="middle">HTML + CSS + JS</text>
-    </g>
+
+    
+    <polygon points="242,146 334,104 336,107 244,151" fill="#1e3a8a" />
+  </g>
+
+  
+  <g fill="none" stroke-linecap="round">
+    <path d="M 125,248 C 175,295 295,305 415,262 C 515,226 595,212 645,165" stroke="#0369a1" stroke-width="1.3" opacity="0.7" />
+    <path d="M 148,315 C 235,355 365,342 475,288 C 555,248 618,232 662,192" stroke="#6d28d9" stroke-width="1.2" opacity="0.65" />
+    <path d="M 195,275 C 285,312 395,295 495,245" stroke="#ffffff" stroke-width="1.5" opacity="0.75" />
+  </g>
+
+  
+  <g filter="url(#haloTexto)">
+    <text x="415" y="252" text-anchor="middle" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="68" font-weight="normal" fill="#0f172a" letter-spacing="2" transform="scale(0.80, 1.34)" transform-origin="415 252">
+      FINAL FANTASIA
+    </text>
+
+    
+    <line x1="185" y1="264" x2="645" y2="264" stroke="#0f172a" stroke-width="2.2" />
+
+    
+    <text x="415" y="286" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="12" font-weight="700" fill="#1e293b" letter-spacing="6">
+      BATALHA DE COMANDOS
+    </text>
   </g>
 </svg>
