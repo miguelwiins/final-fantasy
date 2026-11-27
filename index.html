@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyber Blade: Turnos de Aço</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="tela-jogo" id="telaJogo">
+    <!-- Cabeçalho com placar, turno e botão de tema -->
+    <header class="cabecalho-rpg">
+      <div class="info-topo">
+        <span class="badge-turno" id="textoTurno">TURNO 1 / 7</span>
+        <span class="badge-pontos" id="textoPontos">PONTOS: 0</span>
+      </div>
+      <button type="button" class="btn-tema" id="btnTema" aria-label="Alternar tema claro ou escuro">
+        ☀️ / 🌙
+      </button>
+    </header>
+
+    <!-- Arena de Batalha -->
+    <section class="arena-batalha" id="arenaBatalha">
+      <!-- Lado do Herói -->
+      <div class="combatente heroi-box" id="boxHeroi">
+        <div class="sprite-heroi" aria-hidden="true">
+          <!-- Espada e silhueta estilizada em SVG puro -->
+          <svg viewBox="0 0 120 120" width="96" height="96">
+            <polygon points="85,15 102,22 48,88 38,80" fill="#38bdf8" stroke="#e0f2fe" stroke-width="2"/>
+            <rect x="30" y="76" width="22" height="6" rx="2" transform="rotate(-40 41 79)" fill="#f59e0b"/>
+            <circle cx="45" cy="42" r="14" fill="#1e293b" stroke="#38bdf8" stroke-width="3"/>
+            <polygon points="32,34 45,20 58,34 50,30 45,25 40,30" fill="#facc15"/>
+            <path d="M26,95 Q45,60 64,95 Z" fill="#0f172a" stroke="#38bdf8" stroke-width="3"/>
+          </svg>
+        </div>
+        <div class="status-card">
+          <div class="nome-combatente">CAVALEIRO NEON</div>
+          <div class="barra-fundo">
+            <div class="barra-vida vida-heroi" id="barraVidaHeroi" style="width: 100%;"></div>
+          </div>
+          <div class="texto-hp" id="hpHeroiTexto">HP 100 / 100</div>
+        </div>
+      </div>
+
+      <!-- Efeito visual central de golpe -->
+      <div class="efeito-golpe" id="efeitoGolpe" aria-live="polite"></div>
+
+      <!-- Lado do Chefe Mecânico -->
+      <div class="combatente chefe-box" id="boxChefe">
+        <div class="sprite-chefe" aria-hidden="true">
+          <!-- Guardião Mecânico em SVG puro -->
+          <svg viewBox="0 0 120 120" width="104" height="104">
+            <rect x="28" y="26" width="64" height="58" rx="10" fill="#334155" stroke="#f43f5e" stroke-width="3"/>
+            <rect x="38" y="42" width="44" height="14" rx="4" fill="#090d16"/>
+            <circle cx="50" cy="49" r="5" fill="#f43f5e"/>
+            <circle cx="70" cy="49" r="5" fill="#f43f5e"/>
+            <polygon points="20,45 28,35 28,65" fill="#f43f5e"/>
+            <polygon points="100,45 92,35 92,65" fill="#f43f5e"/>
+            <rect x="40" y="84" width="14" height="20" rx="3" fill="#475569"/>
+            <rect x="66" y="84" width="14" height="20" rx="3" fill="#475569"/>
+          </svg>
+        </div>
+        <div class="status-card">
+          <div class="nome-combatente">TITÃ DE AÇO MK-VII</div>
+          <div class="barra-fundo">
+            <div class="barra-vida vida-chefe" id="barraVidaChefe" style="width: 100%;"></div>
+          </div>
+          <div class="texto-hp" id="hpChefeTexto">HP 140 / 140</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Caixa de Diálogo / Scanner de Ação estilo RPG clássico -->
+    <section class="caixa-rpg caixa-mensagem">
+      <div class="titulo-caixa">SCANNER DE BATALHA</div>
+      <p class="texto-situacao" id="textoSituacao">
+        Carregando sistema de combate...
+      </p>
+      <p class="texto-feedback" id="textoFeedback" aria-live="polite"></p>
+    </section>
+
+    <!-- Menu de Comandos em Inglês -->
+    <section class="caixa-rpg caixa-comandos" id="painelComandos">
+      <div class="titulo-caixa">COMANDOS (ESCOLHA A AÇÃO CERTA)</div>
+      <div class="grade-botoes" id="gradeBotoes">
+        <!-- Os botões serão criados pelo JavaScript -->
+      </div>
+      <button type="button" class="btn-proximo oculto" id="btnProximo">
+        PRÓXIMO TURNO ▶
+      </button>
+    </section>
+
+    <!-- Tela Final de Vitória ou Derrota -->
+    <section class="caixa-rpg tela-final oculto" id="telaFinal">
+      <h1 class="titulo-final" id="tituloFinal">VITÓRIA!</h1>
+      <p class="resumo-final" id="resumoFinal"></p>
+      <button type="button" class="btn-reiniciar" id="btnReiniciar">
+        JOGAR NOVAMENTE ↻
+      </button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
+  

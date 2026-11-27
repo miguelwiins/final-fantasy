@@ -1,0 +1,334 @@
+/* Variáveis de cores - Tema Escuro padrão (estilo RPG futurista neon) */
+:root {
+  --bg-pagina: #070b14;
+  --bg-arena: linear-gradient(180deg, #0f172a 0%, #1e1b4b 60%, #090d16 100%);
+  --caixa-bg: linear-gradient(180deg, #0c2461 0%, #061233 100%);
+  --caixa-borda: #e2e8f0;
+  --caixa-sombra: 0 0 0 3px #1e3a8a, 0 8px 20px rgba(0, 0, 0, 0.65);
+  --texto-principal: #f8fafc;
+  --texto-secundario: #93c5fd;
+  --destaque: #38bdf8;
+  --btn-bg: rgba(15, 23, 42, 0.85);
+  --btn-hover: #1d4ed8;
+  --btn-borda: #60a5fa;
+  --cor-acerto: #4ade80;
+  --cor-erro: #fb7185;
+}
+
+/* Tema Claro */
+[data-theme="light"] {
+  --bg-pagina: #e2e8f0;
+  --bg-arena: linear-gradient(180deg, #bae6fd 0%, #e0e7ff 65%, #cbd5e1 100%);
+  --caixa-bg: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
+  --caixa-borda: #ffffff;
+  --caixa-sombra: 0 0 0 3px #3b82f6, 0 6px 16px rgba(15, 23, 42, 0.25);
+  --texto-principal: #ffffff;
+  --texto-secundario: #bfdbfe;
+  --destaque: #38bdf8;
+  --btn-bg: rgba(30, 58, 138, 0.9);
+  --btn-hover: #2563eb;
+  --btn-borda: #93c5fd;
+  --cor-acerto: #86efac;
+  --cor-erro: #fda4af;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg-pagina);
+  color: var(--texto-principal);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+}
+
+.tela-jogo {
+  width: 100%;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Cabeçalho */
+.cabecalho-rpg {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.info-topo {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.badge-turno,
+.badge-pontos {
+  background: var(--caixa-bg);
+  border: 2px solid var(--caixa-borda);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+}
+
+.btn-tema {
+  min-width: 48px;
+  min-height: 44px;
+  background: var(--caixa-bg);
+  color: var(--texto-principal);
+  border: 2px solid var(--caixa-borda);
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0 12px;
+}
+
+/* Arena */
+.arena-batalha {
+  position: relative;
+  background: var(--bg-arena);
+  border: 3px solid var(--caixa-borda);
+  border-radius: 10px;
+  padding: 20px 16px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 210px;
+  overflow: hidden;
+}
+
+.combatente {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 2;
+}
+
+.status-card {
+  background: rgba(9, 13, 22, 0.85);
+  border: 2px solid var(--btn-borda);
+  border-radius: 6px;
+  padding: 8px 10px;
+  width: 155px;
+  text-align: center;
+}
+
+.nome-combatente {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--texto-secundario);
+  margin-bottom: 5px;
+}
+
+.barra-fundo {
+  width: 100%;
+  height: 10px;
+  background: #1e293b;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid #475569;
+}
+
+.barra-vida {
+  height: 100%;
+  transition: width 0.35s ease;
+}
+
+.vida-heroi {
+  background: linear-gradient(90deg, #22c55e, #4ade80);
+}
+
+.vida-chefe {
+  background: linear-gradient(90deg, #e11d48, #fb7185);
+}
+
+.texto-hp {
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+.efeito-golpe {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #facc15;
+  text-shadow: 0 0 12px #f59e0b;
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* Caixas estilo janela clássica de RPG */
+.caixa-rpg {
+  background: var(--caixa-bg);
+  border: 3px solid var(--caixa-borda);
+  box-shadow: var(--caixa-sombra);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+
+.titulo-caixa {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--destaque);
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+.texto-situacao {
+  font-size: 1.05rem;
+  line-height: 1.45;
+  font-weight: 600;
+}
+
+.texto-feedback {
+  margin-top: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  min-height: 22px;
+}
+
+.texto-feedback.acerto {
+  color: var(--cor-acerto);
+}
+
+.texto-feedback.erro {
+  color: var(--cor-erro);
+}
+
+/* Botões de Comando */
+.grade-botoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.btn-comando {
+  min-height: 48px;
+  padding: 10px 14px;
+  background: var(--btn-bg);
+  color: var(--texto-principal);
+  border: 2px solid var(--btn-borda);
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.12s ease, background-color 0.15s ease;
+}
+
+.btn-comando::before {
+  content: "▶";
+  color: #facc15;
+  font-size: 0.85rem;
+}
+
+.btn-comando:hover:not(:disabled),
+.btn-comando:focus-visible:not(:disabled) {
+  background: var(--btn-hover);
+  transform: translateX(3px);
+  outline: none;
+}
+
+.btn-comando:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.btn-comando.correto {
+  background: #15803d;
+  border-color: #86efac;
+}
+
+.btn-comando.errado {
+  background: #be123c;
+  border-color: #fda4af;
+}
+
+.btn-proximo,
+.btn-reiniciar {
+  margin-top: 12px;
+  width: 100%;
+  min-height: 48px;
+  background: #f59e0b;
+  color: #090d16;
+  border: 2px solid #fef08a;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.btn-proximo:hover,
+.btn-reiniciar:hover {
+  background: #fbbf24;
+}
+
+/* Tela Final */
+.tela-final {
+  text-align: center;
+}
+
+.titulo-final {
+  font-size: 1.6rem;
+  color: #facc15;
+  margin-bottom: 8px;
+}
+
+.resumo-final {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.oculto {
+  display: none;
+}
+
+/* Animação de impacto */
+@keyframes tremer {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  75% { transform: translateX(8px); }
+}
+
+.animar-dano {
+  animation: tremer 0.3s ease;
+}
+
+/* Respeita preferência de menos movimento */
+@media (prefers-reduced-motion: reduce) {
+  .barra-vida,
+  .btn-comando {
+    transition: none;
+  }
+  .animar-dano {
+    animation: none;
+  }
+}
+
+/* Ajustes para telas pequenas (celular) */
+@media (max-width: 520px) {
+  .grade-botoes {
+    grid-template-columns: 1fr;
+  }
+  .status-card {
+    width: 138px;
+  }
+}

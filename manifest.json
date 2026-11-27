@@ -1,0 +1,16 @@
+{
+  "slug": "cyber-blade-turnos-de-aco",
+  "title": "Cyber Blade: Turnos de Aço",
+  "author": "Seu Nome",
+  "authorClass": "Sua Turma",
+  "discipline": "Inglês",
+  "grades": ["6º ano", "7º ano", "8º ano", "9º ano"],
+  "tags": ["ingles", "rpg", "batalha", "comandos", "vocabulario"],
+  "description": "Batalha de RPG futurista por turnos onde você usa comandos em inglês para atacar, defender e derrotar o Titã de Aço.",
+  "instructions": "Leia o aviso do Scanner de Batalha sobre o movimento do inimigo e clique no comando em inglês correto para reagir e vencer em 7 turnos.",
+  "duration": "3 min",
+  "version": "1.0.0",
+  "entry": "index.html",
+  "cover": "cover.svg",
+  "createdAt": "2026-11-27"
+}
